@@ -55,7 +55,7 @@
                             {{ link_to_route('frontend.index', trans('navs.general.home'), [], ['class' => 'btn btn-default btn-flat']) }}
                         </div>
                         <div class="pull-right">
-                            {{ link_to_route('frontend.new.logout', trans('navs.general.logout'), [], ['class' => 'btn btn-default btn-flat']) }}
+                            {{ link_to_route('auth.logout', trans('navs.general.logout'), [], ['class' => 'btn btn-default btn-flat']) }}
                         </div>
                     </li>
                 </ul>
