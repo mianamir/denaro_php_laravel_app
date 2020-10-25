@@ -91,11 +91,10 @@
             <?php /*<li class="<?php echo e(Active::pattern('admin/cars/*')); ?>">*/ ?>
             <?php /*<?php echo e(link_to_route('admin.cars.index', 'Car')); ?>*/ ?>
             <?php /*</li>*/ ?>
-            <li class="<?php echo e(Active::pattern('admin/contacts/*')); ?>">
-            <?php echo e(link_to_route('admin.contacts.index', 'Business')); ?>
-
-            </li>
-            <li class="">
+<?php /*            <li class="<?php echo e(Active::pattern('admin/contacts/*')); ?>">*/ ?>
+<?php /*            <?php echo e(link_to_route('admin.contacts.index', 'Business')); ?>*/ ?>
+<?php /*            </li>*/ ?>
+            <li class="class="<?php echo e(Active::pattern('admin/contacts/*')); ?>">
             <a href="<?php echo e(route('admin.contacts.index')); ?>">Contact Management</a>
             </li>
             <?php /*<li class="">*/ ?>

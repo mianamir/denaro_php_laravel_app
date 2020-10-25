@@ -44,7 +44,7 @@
 
 
     <?php
-    $categories = \App\Models\Admin\Category::where('parent_id', 0)->get();
+    $categories = \App\Models\Admin\Category::get();
     ?>
     @if(isset($category))
         <?php

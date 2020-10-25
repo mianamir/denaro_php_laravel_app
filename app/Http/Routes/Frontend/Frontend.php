@@ -136,7 +136,13 @@ Route::get('/our/dedicated/staff', 'FrontendController@ourDedicatedStaff')->name
 Route::get('/video/gallery/search', 'FrontendController@video_gallery_search')->name('frontend.site.video.gallery.search');
 Route::get('/image-gallery-category1', 'FrontendController@image_gallery_category1')->name('frontend.image.gallery.category1');
 Route::get('/image-gallery/{image_gallery_category_id}/search', 'FrontendController@image_gallery1')->name('frontend.image.gallery1');
-Route::get('/import-from-japan', 'FrontendController@importFromJapan')->name('frontend.import.from.japan');
+
+Route::get('/sectors-we-deals/search/{id}', 'FrontendController@sectors_we_deals_search')->name('frontend.sectors.we.deals.search');
+Route::get('/industrial-solutions/search/{id}', 'FrontendController@industrial_solutions_search')->name('frontend.industrial.solutions.search');
+Route::get('/products-services/search/{id}', 'FrontendController@products_services_search')->name('frontend.products.services.search');
+
+
+
 Route::get('/faq', 'FrontendController@faq')->name('frontend.faq');
 Route::get('/duties', 'FrontendController@duties')->name('frontend.duties');
 Route::get('/brand', 'FrontendController@brand')->name('frontend.brand');

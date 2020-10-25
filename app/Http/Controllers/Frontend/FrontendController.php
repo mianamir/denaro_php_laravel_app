@@ -2300,6 +2300,27 @@ class FrontendController extends Controller
         return view('frontend.site.image-gallery1', compact('content', 'image_galleries'));
     }
 
+    public function sectors_we_deals_search($id)
+    {
+        $content = Page::where('name', 'sectors_we_deals_search')->first();
+        $sectors_we_deals_projects = Category::where('parent_id', (int)$id)->get();
+        return view('frontend.site.sectors-we-deals-search', compact('content', 'sectors_we_deals_projects'));
+    }
+
+    public function industrial_solutions_search($id)
+    {
+        $content = Page::where('name', 'industrial_solutions_search')->first();
+        $industrial_solutions_search_projects = Category::where('parent_id', (int)$id)->get();
+        return view('frontend.site.industrial-solutions-search', compact('content', 'industrial_solutions_search_projects'));
+    }
+
+    public function products_services_search($id)
+    {
+        $content = Page::where('name', 'products_services_search')->first();
+        $products_services_search_projects = Category::where('parent_id', (int)$id)->get();
+        return view('frontend.site.products-services-search', compact('content', 'products_services_search_projects'));
+    }
+
 
     public function service()
     {

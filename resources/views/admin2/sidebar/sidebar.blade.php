@@ -87,10 +87,10 @@
             {{--<li class="{{ Active::pattern('admin/cars/*') }}">--}}
             {{--{{ link_to_route('admin.cars.index', 'Car') }}--}}
             {{--</li>--}}
-            <li class="{{ Active::pattern('admin/contacts/*') }}">
-            {{ link_to_route('admin.contacts.index', 'Business') }}
-            </li>
-            <li class="">
+{{--            <li class="{{ Active::pattern('admin/contacts/*') }}">--}}
+{{--            {{ link_to_route('admin.contacts.index', 'Business') }}--}}
+{{--            </li>--}}
+            <li class="class="{{ Active::pattern('admin/contacts/*') }}">
             <a href="{{route('admin.contacts.index')}}">Contact Management</a>
             </li>
             {{--<li class="">--}}

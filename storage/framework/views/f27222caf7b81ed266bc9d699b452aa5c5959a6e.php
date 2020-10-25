@@ -49,7 +49,7 @@
 
 
     <?php
-    $categories = \App\Models\Admin\Category::where('parent_id', 0)->get();
+    $categories = \App\Models\Admin\Category::get();
     ?>
     <?php if(isset($category)): ?>
         <?php

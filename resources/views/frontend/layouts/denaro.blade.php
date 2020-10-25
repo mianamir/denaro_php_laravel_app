@@ -66,46 +66,44 @@
 
 
                         <li class="dropdown ">
+                            <?php
+                            $sectors_we_deals = \App\Models\Admin\Category::
+                            where('parent_id', 0)
+                                ->where('id', '!=', 14)
+                                ->where('id', '!=' , 17)
+                                ->orderBy('created_at', 'ASC')->get();
+                            ?>
                             <a href="">Sectors We Deal</a>
                             <ul class="dropdown-submenu">
-                                <li><a href="food-beverages.html">Food & Beverages</a></li>
-                                <li><a href="cosmetics.html">Cosmetics</a></li>
-                                <li><a href="pharmaceuticals.html">Pharmaceuticals</a></li>
-                                <li><a href="plastics.html">Plastics </a></li>
-                                <li><a href="daily-chemicals.html">Daily Chemicals </a></li>
-                                <li><a href="local-imported-warehouse-solutions-sector.html">Local/Imported Warehouse solutions </a></li>
-                                <li><a href="offices-educational-sector.html">Offices & Educational Sector </a></li>
+                                @foreach($sectors_we_deals as $sectors_we_deal)
+                                <li><a href="{{route('frontend.sectors.we.deals.search', $sectors_we_deal->id)}}">{{$sectors_we_deal->name}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a href="index.html" >Industrial Solutions</a>
+                            <a href="#" >Industrial Solutions</a>
+                            <?php
+                            $industrial_solutions = \App\Models\Admin\Category::
+                            where('parent_id', 14)->get();
+                            ?>
                             <ul class="dropdown-submenu">
-                                <li><a href="filling-machines.html">Filling Machines </a></li>
-                                <li><a href="inspection-machines.html">Inspection Machines</a></li>
-                                <li><a href="packing-labeling-machines.html">Packaging and labeling Machines</a></li>
-                                <li><a href="packing-automation-machines.html">Packing Automation </a></li>
-                                <li><a href="warehouse-equipment.html">Warehouse Equipment </a></li>
-                                <li><a href="local-imported-warehouse-solutions.html">Local/Imported Warehouse solutions </a></li>
-                                <li><a href="offices-educational-sector-solution.html">Offices & Educational Sector </a></li>
-                                <li><a href="printing-machines.html">Printing Machines</a>
-                                <li><a href="wrapping-machines.html">Wrapping Machines</a>
-                                <li><a href="production-lines.html">Production Lines</a>
-                                <li><a href="capping-macines.html">Capping Machines</a>
-                                <li><a href="turkey-solutions.html">Turnkey Solutions.</a>
-                                <li><a href="raw-materials.html">Raw Materials</a>
-                                <li><a href="gable-top-packing.html">Gable Top Packaging</a>
-                                <li><a href="brick-packaging.html">Brick Packaging</a>
-                                <li><a href="aerosol-gans.html">Aerosol Cans</a>
+                                @foreach($industrial_solutions as $industrial_solution)
+                                <li><a href="{{route('frontend.industrial.solutions.search', $industrial_solution->id)}}">{{$industrial_solution->name}} </a></li>
+                                @endforeach
+
                             </ul>
                         </li>
 
                         <li class="dropdown">
-                            <a href="real-estate.html">Products/Services</a>
+                            <a href="#">Products/Services</a>
+                            <?php
+                            $products_services = \App\Models\Admin\Category::
+                            where('parent_id', 17)->get();
+                            ?>
                             <ul class="dropdown-submenu">
-                                <li><a href="contract-manufacturing.html">Contract Manufacturing</a></li>
-                                <li><a href="prjects-consultancy-services.html">Projects Consultancy Services</a></li>
-                                <li><a href="commissioing-services.html">After Sale Commissioning &amp; Services</a></li>
-                                <li><a href="medical-sugical-equipment.html">Medical/Surgical Equipments</a></li>
+                                @foreach($products_services as $products_service)
+                                <li><a href="{{route('frontend.products.services.search', $products_service->id)}}">{{$products_service->name}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="dropdown">
