@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         dd('error ok');
         
-        return route('frontend.user.dashboard');
+        return route('frontend.index');
     }
 
 //    public function register(Request $request){
@@ -127,9 +127,9 @@ class AuthController extends Controller
 //        } // login fun ends
 
 //        public function logout(Request $request){
+////        dd('ok');
 //            \Auth::logout();
 //            \Session::flush();
-//
 //            return redirect(route('frontend.index'));
 //
 //        }

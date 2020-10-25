@@ -360,24 +360,6 @@
         CKEDITOR.replace( 'details' );
 
 
-        <?php /*$('#subject_id').attr("disabled", true);*/ ?>
-        <?php /*$('#chapter_id').attr("disabled", true);*/ ?>
-
-        <?php /*$( "#class_id" ).change(function() {*/ ?>
-            <?php /*var val=$("#class_id").val();*/ ?>
-            <?php /*$('#subject_id').attr("disabled", false);*/ ?>
-            <?php /*$.get("<?php echo e(route('admin.subjects.subjects_byclass')); ?>?id="+val, function( data ) {*/ ?>
-                <?php /*$( "#subject_id" ).html( data );*/ ?>
-            <?php /*});*/ ?>
-        <?php /*});*/ ?>
-        <?php /*$( "#subject_id" ).change(function() {*/ ?>
-            <?php /*var val=$("#subject_id").val();*/ ?>
-            <?php /*$('#chapter_id').attr("disabled", false);*/ ?>
-            <?php /*$.get("<?php echo e(route('admin.subjects.chapter_bysubject')); ?>?id="+val, function( data ) {*/ ?>
-                <?php /*$( "#chapter_id" ).html( data );*/ ?>
-            <?php /*});*/ ?>
-        <?php /*});*/ ?>
-
 
 
     });

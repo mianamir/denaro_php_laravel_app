@@ -360,24 +360,6 @@
         CKEDITOR.replace( 'details' );
 
 
-        {{--$('#subject_id').attr("disabled", true);--}}
-        {{--$('#chapter_id').attr("disabled", true);--}}
-
-        {{--$( "#class_id" ).change(function() {--}}
-            {{--var val=$("#class_id").val();--}}
-            {{--$('#subject_id').attr("disabled", false);--}}
-            {{--$.get("{{route('admin.subjects.subjects_byclass')}}?id="+val, function( data ) {--}}
-                {{--$( "#subject_id" ).html( data );--}}
-            {{--});--}}
-        {{--});--}}
-        {{--$( "#subject_id" ).change(function() {--}}
-            {{--var val=$("#subject_id").val();--}}
-            {{--$('#chapter_id').attr("disabled", false);--}}
-            {{--$.get("{{route('admin.subjects.chapter_bysubject')}}?id="+val, function( data ) {--}}
-                {{--$( "#chapter_id" ).html( data );--}}
-            {{--});--}}
-        {{--});--}}
-
 
 
     });

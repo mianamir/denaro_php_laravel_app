@@ -69,6 +69,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/email/setting/{contacts}', ['as'=> 'admin.email.setting.update', 'uses' => 'Admin\ContactController@adminEmailSettingUpdate']);
 
 
+
     Route::get('admin/galleries', ['as'=> 'admin.galleries.index', 'uses' => 'Admin\GalleryController@index']);
     Route::post('admin/galleries', ['as'=> 'admin.galleries.store', 'uses' => 'Admin\GalleryController@store']);
     Route::get('admin/galleries/create', ['as'=> 'admin.galleries.create', 'uses' => 'Admin\GalleryController@create']);
