@@ -16,7 +16,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                <table class="table table-responsive" id="myTable">
+                <table class="table table-responsive" id="my1Table">
                     <thead>
                     <th>Title</th>
 

@@ -1,9 +1,9 @@
-@extends('backend.layouts.master')
+@extends('admin2.layouts.master')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Brand Type
+            Image Gallery Category
         </h1>
     </section>
     <div class="content">

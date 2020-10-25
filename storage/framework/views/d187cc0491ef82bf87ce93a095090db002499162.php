@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DENARO International Traders</title>
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>">
     <!-- Bootstrap -->
     <link href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('assets/css/style.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('assets/css/responsive-style.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('assets/css/responsive-style.css')); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/animate.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/animate.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/effect_style.css')); ?>">
     <link href="<?php echo e(asset('assets/css/responsive_bootstrap_carousel.css')); ?>" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/demo.css')); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/set1.css')); ?>" />
@@ -28,7 +27,7 @@
 
             ?>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 display-block ">
-                <a href="index.html" class="logo"><img src="<?php echo e($header->logo); ?>" class="img-responsive" alt="logo"></a>
+                <a href="<?php echo e(url('/')); ?>" class="logo"><img src="<?php echo e($header->logo); ?>" class="img-responsive" alt="logo"></a>
             </div>
             <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 pull-right" >
                 <ul class="header-info">
@@ -56,12 +55,12 @@
                 <div id="main-navigation" class="collapse navbar-collapse ">
                     <ul class="nav navbar-nav">
                         <li class="dropdown active">
-                            <a href="index.html" class="active">Home</a>
+                            <a href="<?php echo e(url('/')); ?>" class="active">Home</a>
 
                         </li>
 
                         <li class="dropdown">
-                            <a href="about.html">About Us</a>
+                            <a href="<?php echo e(route('frontend.about')); ?>">About Us</a>
 
                         </li>
 
@@ -110,20 +109,24 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="excluvive-partner.html">Exclusive Partners</a>
+                            <a href="<?php echo e(route('frontend.exclusive.partners')); ?>">Exclusive Partners</a>
 
                         </li>
                         <li class="dropdown">
-                            <a href="gallery.html">Gallery</a>
+                            <a href="<?php echo e(route('frontend.image.gallery.category1')); ?>">Gallery</a>
 
                         </li>
+<?php /*                        <li class="dropdown">*/ ?>
+<?php /*                            <a href="<?php echo e(route('frontend.site.video.gallery.search')); ?>">Video</a>*/ ?>
+
+<?php /*                        </li>*/ ?>
 
 
                     </ul>
                     <div class="search-column search-fl">
                         <button name="button" type="button" class="search-btn"  data-toggle="modal" data-target=".bs-example-modal-lg"></button>
                     </div>
-                    <a class="header-requestbtn header2-requestbtn hvr-bounce-to-right" href="contact.html">Contact Us</a>
+                    <a class="header-requestbtn header2-requestbtn hvr-bounce-to-right" href="<?php echo e(route('frontend.contact')); ?>">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -161,34 +164,47 @@
 <footer>
     <div class="ftr-section">
         <div class="container">
-
+            <?php
+            $ceo_message_home_footer = \App\Models\Admin\Page::where('name', 'ceo_message_home_footer')->first();
+            $black_logo_home_footer = \App\Models\Admin\Page::where('name', 'black_logo_home_footer')->first();
+            ?>
             <div class="row">
                 <div class="col-md-7 col-sm-4 col-xs-12  ftr-about-text">
-                    <h6>CEO Message</h6>
-                    <p class="marbtm20 line-height26" style="text-align:justify;"> <em><img align="left" hspace="15px" class="margin-b-20" src="images/ceo.jpg" alt=""></em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut et dolore magna aliqua. Ut enim ad minim venia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut et dolore magna aliqua. Ut enim ad minim venia.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a class="ftr-read-more" href="about.html">Read More</a>
+                    <h6><?php echo e($ceo_message_home_footer->title); ?></h6>
+                    <p class="marbtm20 line-height26" style="text-align:justify;"> <em><img align="left" hspace="15px" class="margin-b-20" src="<?php echo e($ceo_message_home_footer->image); ?>" alt=""></em>
+                        <?php echo $ceo_message_home_footer->details; ?>
+
+                    </p>
+                    <a class="ftr-read-more" href="<?php echo e(route('frontend.director.message')); ?>">Read More</a>
                 </div>a
 
                 <div class="col-md-2 col-sm-4 col-xs-12 ftr-link-column">
                     <h6>Cool Links</h6>
                     <ul class="footer-link">
-                        <li><a href="index.html">- Home</a></li>
-                        <li><a href="about.html">- About Us</a></li>
-                        <li><a href="dir-message.html">- Director Message</a></li>
-                        <li><a href="faq.html">- FAQ</a></li>
-                        <li><a href="vision-mission.html">- Vision / Mission</a></li>
+                        <li><a href="<?php echo e(url('/')); ?>">- Home</a></li>
+                        <li><a href="<?php echo e(route('frontend.about')); ?>">- About Us</a></li>
+                        <li><a href="<?php echo e(route('frontend.director.message')); ?>">- Director Message</a></li>
+                        <li><a href="<?php echo e(route('frontend.faq')); ?>">- FAQ</a></li>
+                        <li><a href="<?php echo e(route('frontend.vision')); ?>">- Vision / Mission</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-12 ftr-follow-column pull-right">
                     <h6>Follow Us</h6>
+                    <?php
+                    $facebook = \App\Models\Admin\SocialIcon::where('name', 'facebook')->first();
+                    $twitter = \App\Models\Admin\SocialIcon::where('name', 'twitter')->first();
+                    $linkedin = \App\Models\Admin\SocialIcon::where('name', 'linkedin')->first();
+                    $youtube = \App\Models\Admin\SocialIcon::where('name', 'youtube')->first();
+                    $instagram = \App\Models\Admin\SocialIcon::where('name', 'instagram')->first();
+                    ?>
                     <div class="header-socials footer-socials">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="<?php echo e($facebook->url); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="<?php echo e($twitter->url); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="<?php echo e($linkedin->url); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="<?php echo e($youtube->url); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="<?php echo e($instagram->url); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </div>
-                    <span class="ftr-logo img"><img src="images/black-logo.png" class="img-responsive" alt="logo-image"></span>
+                    <span class="ftr-logo img"><img src="<?php echo e($black_logo_home_footer->image); ?>" class="img-responsive" alt="logo-image"></span>
                 </div>
             </div>
             <div class="footer-btm">
@@ -250,7 +266,101 @@
         });
     });
 </script>
+<script>
+    let modalId = $('#image-gallery');
 
+    $(document)
+        .ready(function () {
+
+            loadGallery(true, 'a.thumbnail');
+
+            //This function disables buttons when needed
+            function disableButtons(counter_max, counter_current) {
+                $('#show-previous-image, #show-next-image')
+                    .show();
+                if (counter_max === counter_current) {
+                    $('#show-next-image')
+                        .hide();
+                } else if (counter_current === 1) {
+                    $('#show-previous-image')
+                        .hide();
+                }
+            }
+
+            /**
+             *
+             * @param  setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+             * @param  setClickAttr  Sets the attribute for the click handler.
+             */
+
+            function loadGallery(setIDs, setClickAttr) {
+                let current_image,
+                    selector,
+                    counter = 0;
+
+                $('#show-next-image, #show-previous-image')
+                    .click(function () {
+                        if ($(this)
+                            .attr('id') === 'show-previous-image') {
+                            current_image--;
+                        } else {
+                            current_image++;
+                        }
+
+                        selector = $('[data-image-id="' + current_image + '"]');
+                        updateGallery(selector);
+                    });
+
+                function updateGallery(selector) {
+                    let $sel = selector;
+                    current_image = $sel.data('image-id');
+                    $('#image-gallery-title')
+                        .text($sel.data('title'));
+                    $('#image-gallery-image')
+                        .attr('src', $sel.data('image'));
+                    disableButtons(counter, $sel.data('image-id'));
+                }
+
+                if (setIDs == true) {
+                    $('[data-image-id]')
+                        .each(function () {
+                            counter++;
+                            $(this)
+                                .attr('data-image-id', counter);
+                        });
+                }
+                $(setClickAttr)
+                    .on('click', function () {
+                        updateGallery($(this));
+                    });
+            }
+        });
+
+    // build key actions
+    $(document)
+        .keydown(function (e) {
+            switch (e.which) {
+                case 37: // left
+                    if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+                        $('#show-previous-image')
+                            .click();
+                    }
+                    break;
+
+                case 39: // right
+                    if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+                        $('#show-next-image')
+                            .click();
+                    }
+                    break;
+
+                default:
+                    return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        });
+
+</script>
 </body>
 
 </html>

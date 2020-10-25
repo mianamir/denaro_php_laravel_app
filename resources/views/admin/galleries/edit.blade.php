@@ -1,8 +1,8 @@
-@extends('backend.layouts.master')
+@extends('admin2.layouts.master')
 @section('content')
     <section class="content-header">
         <h1>
-            Gallery
+           Video Gallery
         </h1>
     </section>
     <div class="content">
@@ -34,22 +34,22 @@
                                 {{ Session::get('name') }}
                             </div>
                         @endif
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <?php
-                                $categories = \App\Models\Admin\HomeGallery::get();
-                                ?>
-                                <label>Category</label><br>
-                                <select class="form-control" name="cat_id">
-                                    <option value="-1">Category</option>
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}"
-                                                @if($category->id == $gallery->cat_id) selected="selected" @endif>{{$category->title}}</option>
-                                    @endforeach
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <?php--}}
+{{--                                $categories = \App\Models\Admin\HomeGallery::get();--}}
+{{--                                ?>--}}
+{{--                                <label>Category</label><br>--}}
+{{--                                <select class="form-control" name="cat_id">--}}
+{{--                                    <option value="-1">Category</option>--}}
+{{--                                    @foreach($categories as $category)--}}
+{{--                                        <option value="{{$category->id}}"--}}
+{{--                                                @if($category->id == $gallery->cat_id) selected="selected" @endif>{{$category->title}}</option>--}}
+{{--                                    @endforeach--}}
 
-                                </select>
-                            </div>
-                        </div>
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -60,20 +60,20 @@
 
 
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Image</label>
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label>Image</label>--}}
 
-                                <input id="" name="image" type="file" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Image Order</label>
+{{--                                <input id="" name="image" type="file" class="form-control">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label>Image Order</label>--}}
 
-                                <input id="" name="order_image" value="{{old('order_image', $gallery->order_image)}}" type="text" class="form-control">
-                            </div>
-                        </div>
+{{--                                <input id="" name="order_image" value="{{old('order_image', $gallery->order_image)}}" type="text" class="form-control">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
 
                         <div class="col-md-12">

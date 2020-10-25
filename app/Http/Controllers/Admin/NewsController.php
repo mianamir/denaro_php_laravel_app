@@ -30,7 +30,7 @@ class NewsController extends AppBaseController
      */
     public function index()
     {
-        $news = News::orderBy('id','desc')->get();
+        $news = News::orderBy('created_at','desc')->get();
         return view('admin.news.index', compact('news'));
     }
 

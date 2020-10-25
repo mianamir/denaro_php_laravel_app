@@ -5,10 +5,10 @@
 </div>
 
 {{--<!-- Url Field -->--}}
-<div class="form-group col-sm-6">
-    {!! Form::label('url', 'Url:') !!}
-    {!! Form::text('url', null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('url', 'Url:') !!}--}}
+{{--    {!! Form::text('url', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 {{--<!-- Title Field -->--}}
 {{--<div class="form-group col-sm-6">--}}
@@ -32,7 +32,7 @@
     {{--{!! Form::textarea('meta_description', null, ['class' => 'form-control']) !!}--}}
 {{--</div>--}}
 
-<div class="form-group col-sm-6 col-lg-6">
+<div class="form-group col-sm-12 col-lg-12">
 
     {!! Form::label('image', 'image:') !!}
     {!! Form::file('image') !!}
@@ -40,11 +40,11 @@
 
 <!-- Parent Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('parent_id', 'Parent Id:') !!}
+    {!! Form::label('parent_id', 'Project Parent Category:') !!}
 
 
     <?php
-    $categories = \App\Models\Admin\Category::all();
+    $categories = \App\Models\Admin\Category::where('parent_id', 0)->get();
     ?>
     @if(isset($category))
         <?php
@@ -54,7 +54,7 @@
 
     <select class="form-control" name="parent_id">
 
-        <option value="">Parent</option>
+        <option value="">Project Category Parent</option>
         @foreach( $categories as $cat)
             <option value="{{$cat->id}}" {{isset($category) && $category->parent_id == $cat->id ?"selected":''}}>{{$cat->name}}</option>
         @endforeach

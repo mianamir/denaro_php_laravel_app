@@ -1,4 +1,4 @@
-<table class="table table-responsive" id="categories-table">
+<table class="table table-responsive" id="myTable">
     <thead>
     <th>Name</th>
     {{--<th>Url</th>--}}

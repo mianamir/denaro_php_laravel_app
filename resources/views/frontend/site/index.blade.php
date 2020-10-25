@@ -97,17 +97,26 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
                 <h3 class="white-color">we are dealing</h3>
                 <!--<a class="view-project-link" href="#">View All Projects</a>-->
             </div>
+            <?php
+            $categories = \App\Models\Admin\Category::
+            where('parent_id', 0)
+            ->where('id', '!=', 14)
+            ->where('id', '!=' , 17)
+            ->orderBy('created_at', 'DESC')->get();
+            ?>
+            @foreach($categories as $category)
+{{--            @if($category->parent_id == 0 and ($category->id != 14 or $category->id != 17))--}}
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
 
                 <div class="grid">
                     <div class="image-zoom-on-hover">
                         <div class="gal-item">
                             <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/1.jpg" alt="Project1">
+                                <img class="img-full img-responsive" src="{{$category->image}}" alt="Project1">
                                 <div class="tour-layer delay-1"></div>
                                 <div class="vertical-align">
                                     <div class="border">
-                                        <h5>Food &amp; beverages</h5>
+                                        <h5>{{$category->name}}</h5>
                                     </div>
                                     <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
                                 </div>
@@ -115,145 +124,11 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
                         </div>
                     </div>
                 </div>
-                <h4>Food &amp; beverages</h4>
+                <h4>{{$category->name}}</h4>
 
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/2.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Cosmetics</h>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Cosmetics</h4>
-
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/3.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Pharmaceuticals</h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Pharmaceuticals</h4>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/4.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Plastics </h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Plastics </h4>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/5.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Local/Imported Warehouse solutions</h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Local/Imported Warehouse solutions</h4>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/6.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Offices & Educational Sector</h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Offices & Educational Sector</h4>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/7.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Raw Material</h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Raw Material</h4>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img homeprj3-slide">
-                <div class="grid">
-                    <div class="image-zoom-on-hover">
-                        <div class="gal-item">
-                            <a class="black-hover" href="#">
-                                <img class="img-full img-responsive" src="images/home1-images/8.jpg" alt="Project1">
-                                <div class="tour-layer delay-1"></div>
-                                <div class="vertical-align">
-                                    <div class="border">
-                                        <h5>Aerosol Can</h5>
-                                    </div>
-                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View More</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h4>Aerosol Can</h4>
-            </div>
+{{--            @endif--}}
+            @endforeach
 
 
         </div>
@@ -261,10 +136,14 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
 </section>
 
 <!--=========Footer Start============-->
+<?php
+$home_projects_callouts = \App\Models\Admin\Page::where('name', 'home_projects_callout')->first();
+
+?>
 <footer>
     <div class="yellow-background solution-available text-center">
         <div class="container">
-            <h5>For Any Solution We Are <span>Available</span> For You</h5>
+            <h5>{{$home_projects_callouts->title}}</h5>
             <a data-animation="animated fadeInUp" class="header-requestbtn contactus-btn hvr-bounce-to-right" href="#.html">Projects</a>
         </div>
     </div>
@@ -280,167 +159,37 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
                     <div class="controls"> <a class="left fa fa-angle-left next_prve_control" href="#our_project" data-slide="prev"></a><a class="right fa fa-angle-right next_prve_control" href="#our_project" data-slide="next"></a> </div>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/filling-machine.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Filling Machines </h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
+                        <?php
+                        $industrial_solutions_projects = \App\Models\Admin\Category::
+                        where('parent_id', 14)->get();
+                        $i_active = false;
+                        ?>
+                        @foreach ($industrial_solutions_projects as $industrial_solution)
+                        <div class="item {{!$i_active ? 'active' : ''}}">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
+                                        <div class="grid">
+                                            <div class="image-zoom-on-hover">
+                                                <div class="gal-item">
+                                                    <a class="black-hover" href="#">
+                                                        <img class="img-full img-responsive" src="{{$industrial_solution->image}}" alt="">
+                                                        <div class="tour-layer delay-1"></div>
+                                                        <div class="vertical-align">
+                                                            <div class="border">
+                                                                <h5>{{$industrial_solution->name}} </h5>
+                                                            </div>
+                                                            <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/inspection-machine.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Inspection Machines</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/packing-laeling-machine.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Packaging and labeling Machines</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/packing-automation.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Packing Automation</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php $i_active = true; ?>
+                        @endforeach
 
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/warehouse-equipment.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Warehouse Equipment</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/printing-machine.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Printing Machines</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/wrapping-machine.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Wrapping Machines</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 img ">
-                                <div class="grid">
-                                    <div class="image-zoom-on-hover">
-                                        <div class="gal-item">
-                                            <a class="black-hover" href="#">
-                                                <img class="img-full img-responsive" src="images/solutions/production-line.jpg" alt="">
-                                                <div class="tour-layer delay-1"></div>
-                                                <div class="vertical-align">
-                                                    <div class="border">
-                                                        <h5>Production Lines</h5>
-                                                    </div>
-                                                    <div class="view-all hvr-bounce-to-right slide_learn_btn view_project_btn"><span>View Project</span></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -452,12 +201,21 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
 
 
 <!--=========Testimonial Start============-->
+<?php
+//$home_video = \App\Models\Admin\Page::where('name', 'home_video')->first();
+$home_video = \App\Models\Admin\Gallery::first();
+?>
 <section class="pad20-45-top-bottom home3_testimonial carousel slide two_shows_one_move common_testimonial_01" id="var_testimonial" data-ride="carousel">
     <div class="container">
 
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <h3 class=" text-center">Videos</h3>
-            <img class="img-full img-responsive" src="images/video.jpg" alt="">
+{{--            <h3 class=" text-center">{{$home_video->title}}</h3>--}}
+{{--            <img class="img-full img-responsive" src="{{$home_video->name}}" alt="">--}}
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$home_video->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            </div>
+            <a class="btn btn-primary" href="{{route('frontend.site.video.gallery.search')}}">All Videos</a>
 
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -465,19 +223,17 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
 
             <h3 class=" text-center">News Updates</h3>
             <div class="clearfix">&nbsp;</div>
+            <?php
+            $news_updates = \App\Models\Admin\News::orderBy('created_at','DESC')->get();
+            ?>
             <marquee scrollamount="4" onmouseover=this.stop() onmouseout=this.start() direction="up">
+                @foreach($news_updates as $news_update)
                 <blockquote class="margin-clear">
-                    <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-                    <footer><cite title="Source Title">Steve Jobs </cite></footer>
+                    <p>{!! $news_update->detail !!}</p>
+                    <footer><cite title="Source Title">{{$news_update->title}}</cite></footer>
                 </blockquote>
-                <blockquote class="margin-clear">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem.</p>
-                    <footer><cite title="Source Title">Steve Doe </cite></footer>
-                </blockquote>
-                <blockquote class="margin-clear">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem.</p>
-                    <footer><cite title="Source Title">Steve Doe </cite></footer>
-                </blockquote>
+                @endforeach
+
             </marquee>
 
 
@@ -491,16 +247,13 @@ $home_page = \App\Models\Admin\Page::where('name', 'home')->first();
 <div class="container">
     <h3 align="center">Our Partners/ Our Clients</h3>
     <section class="customer-logos slider">
-        <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
-        <div class="slide"><img src="http://www.webcoderskull.com/img/logo.png"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
-        <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
-        <div class="clearfix">&nbsp;</div>
+        <?php
+        $clients = \App\Models\Admin\Client::orderBy('created_at', 'DESC')->get();
+        ?>
+        @foreach($clients as $client)
+        <div class="slide"><img src="{{$client->image}}"></div>
+        @endforeach
+                <div class="clearfix">&nbsp;</div>
     </section>
 </div>
 

@@ -21,8 +21,8 @@ class Client extends Model
 
 
     public $fillable = [
-        'image',
-        'detail'
+        'image'
+//        'detail'
     ];
 
     /**
@@ -31,8 +31,8 @@ class Client extends Model
      * @var array
      */
     protected $casts = [
-        'image' => 'string',
-        'detail' => 'string'
+        'image' => 'string'
+//        'detail' => 'string'
     ];
 
     /**
@@ -42,7 +42,7 @@ class Client extends Model
      */
     public static $rules = [
 //        'image' => 'required',
-        'detail' => 'required'
+//        'detail' => 'required'
     ];
 
     

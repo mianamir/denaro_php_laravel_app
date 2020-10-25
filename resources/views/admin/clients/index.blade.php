@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Brands</h1>
+        <h1 class="pull-left">Partners/Clients</h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('admin.clients.create') !!}">Add New</a>
         </h1>
@@ -15,11 +15,11 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                <table class="table table-responsive" id="demo">
+                <table class="table table-responsive" id="myTable">
 
                         <thead>
                        <tr>
-                           <th>Name</th>
+{{--                           <th>Name</th>--}}
                            <th>Image</th>
                            <th>Action</th>
                        </tr>
@@ -28,7 +28,7 @@
                     <tbody>
                     @foreach($clients as $client)
                         <tr>
-                            <td>{!! $client->detail !!}</td>
+{{--                            <td>{!! $client->detail !!}</td>--}}
                             <td><img src="{{asset($client->image)}}" width="100" height="100"></td>
                             <td>
                                 {!! Form::open(['route' => ['admin.clients.destroy', $client->id], 'method' => 'delete']) !!}

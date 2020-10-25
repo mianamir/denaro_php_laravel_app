@@ -78,15 +78,18 @@
             <li class="{{ Active::pattern('admin/pages/*') }}">
                 {{ link_to_route('admin.pages.index', 'Pages Management') }}
             </li>
+            <li class="{{ Active::pattern('admin/categories/*') }}">
+                {{ link_to_route('admin.categories.index', 'Project Category Management') }}
+            </li>
             {{--<li class="{{ Active::pattern('admin/categories/*') }}">--}}
             {{--{{ link_to_route('admin.categories.index', "Category") }}--}}
             {{--</li>--}}
             {{--<li class="{{ Active::pattern('admin/cars/*') }}">--}}
             {{--{{ link_to_route('admin.cars.index', 'Car') }}--}}
             {{--</li>--}}
-            {{--<li class="{{ Active::pattern('admin/contacts/*') }}">--}}
-            {{--{{ link_to_route('admin.contacts.index', 'Business') }}--}}
-            {{--</li>--}}
+            <li class="{{ Active::pattern('admin/contacts/*') }}">
+            {{ link_to_route('admin.contacts.index', 'Business') }}
+            </li>
             <li class="">
             <a href="{{route('admin.contacts.index')}}">Contact Management</a>
             </li>
@@ -106,9 +109,9 @@
             {{--<li class="{{ Active::pattern('admin/galleries/*') }}">--}}
                 {{--{{ link_to_route('admin.galleries.index', 'Image Gallery') }}--}}
             {{--</li>--}}
-            {{--<li class="{{ Active::pattern('admin/authors/*') }}">--}}
-                {{--{{ link_to_route('admin.authors.index', 'Video Gallery') }}--}}
-            {{--</li>--}}
+{{--            <li class="{{ Active::pattern('admin/authors/*') }}">--}}
+{{--                {{ link_to_route('admin.authors.index', 'Authors For Vid Gallery') }}--}}
+{{--            </li>--}}
         <!--            <li class="{{ Active::pattern('admin/downloads/*') }}">
                 {{ link_to_route('admin.downloads.index', "Downloads") }}
                 </li>-->
@@ -127,72 +130,28 @@
             {{--<li class="{{ Active::pattern('admin/headers/*') }}">--}}
             {{--{{ link_to_route('admin.headers.index.rate', 'Dollar Rate') }}--}}
             {{--</li>--}}
-            {{--<li class="{{ Active::pattern('admin/clients/*') }}">--}}
-            {{--{{ link_to_route('admin.clients.index', 'Brands') }}--}}
-            {{--</li>--}}
-            {{--<li class="">--}}
-            {{--<a href="{{route('admin.galleries.index')}}">Country</a>--}}
-            {{--</li>--}}
-            <li class="{{ Active::pattern('admin/customers/*') }}">
-                {{ link_to_route('admin.customers.index', 'Staff Management') }}
+            <li class="{{ Active::pattern('admin/clients/*') }}">
+            {{ link_to_route('admin.clients.index', 'Partners/Clients Management') }}
+            </li>
+
+{{--            <li class="{{ Active::pattern('admin/customers/*') }}">--}}
+{{--                {{ link_to_route('admin.customers.index', 'Video Management') }}--}}
+{{--            </li>--}}
+            <li class="{{ Active::pattern('admin/brandTypes/*') }}">
+                {{ link_to_route('admin.brandTypes.index', 'Image Gallery Category Management') }}
+            </li>
+            <li class="{{ Active::pattern('admin/brands/*') }}">
+                {{ link_to_route('admin.brands.index', 'Image Gallery Management') }}
+            </li>
+            <li class="{{ Active::pattern('admin.galleries/*') }}">
+                {{ link_to_route('admin.galleries.index', 'Video Gallery Management') }}
             </li>
             <li class="{{ Active::pattern('admin/email/setting/*') }}">
                 {{ link_to_route('admin.email.setting', 'Setting Management') }}
             </li>
-            <li class="" style="background-color: #3c8dbc;">
-                <a href="#" style="color: #fff !important;">Application Management</a>
-            </li>
-            <li class="treeview">
 
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Teacher Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('admin.teachers.index')}}"><i class="fa fa-circle-o"></i>Teacher Management</a></li>
-                    <li><a href="{{route('admin.courseToTeaches.index')}}"><i class="fa fa-circle-o"></i>Course To Teach Management</a></li>
-                    <li><a href="{{route('admin.paymentPlans.index')}}"><i class="fa fa-circle-o"></i>Payment Plan Management</a></li>
-                    <li><a href="{{route('admin.paymentAccounts.index')}}"><i class="fa fa-circle-o"></i>Payment Account Management</a></li>
 
-                </ul>
-            </li>
-            <li class="treeview">
 
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Course Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    {{--<li><a href="{{route('admin.employees.index')}}"><i class="fa fa-circle-o"></i>Student</a></li>--}}
-                    <li><a href="{{route('admin.studentClasses.index')}}"><i class="fa fa-circle-o"></i>Class Management</a></li>
-                    <li><a href="{{route('admin.subjectTypes.index')}}"><i class="fa fa-circle-o"></i>Course Type Management</a></li>
-                    <li><a href="{{route('admin.subjects.index')}}"><i class="fa fa-circle-o"></i>Course Management</a></li>
-                    {{--<li><a href="{{route('admin.classSubjects.index')}}"><i class="fa fa-circle-o"></i>Class Subjects Management</a></li>--}}
-                    {{--<li><a href="{{route('admin.chapters.index')}}"><i class="fa fa-circle-o"></i>Chapter Management</a></li>--}}
-                    {{--<li><a href="{{route('admin.topics.index')}}"><i class="fa fa-circle-o"></i>Topic Management</a></li>--}}
-
-                </ul>
-            </li>
-            <li class="treeview">
-
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Student Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('admin.students.index')}}"><i class="fa fa-circle-o"></i>Student Management</a></li>
-
-                </ul>
-            </li>
 
 
             {{--<li class="treeview">--}}
@@ -216,12 +175,7 @@
 
             {{--</ul>--}}
             {{--</li>--}}
-            {{--<li class="{{ Active::pattern('admin/brandTypes/*') }}">--}}
-            {{--{{ link_to_route('admin.brandTypes.index', 'Brand Type') }}--}}
-            {{--</li>--}}
-            {{--<li class="{{ Active::pattern('admin/brands/*') }}">--}}
-            {{--{{ link_to_route('admin.brands.index', 'Brand') }}--}}
-            {{--</li>--}}
+
 
             {{--<li class="{{ Active::pattern('admin/services/*') }}">--}}
             {{--{{ link_to_route('admin.services.index', 'Services') }}--}}

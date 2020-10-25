@@ -81,15 +81,20 @@
                 <?php echo e(link_to_route('admin.pages.index', 'Pages Management')); ?>
 
             </li>
+            <li class="<?php echo e(Active::pattern('admin/categories/*')); ?>">
+                <?php echo e(link_to_route('admin.categories.index', 'Project Category Management')); ?>
+
+            </li>
             <?php /*<li class="<?php echo e(Active::pattern('admin/categories/*')); ?>">*/ ?>
             <?php /*<?php echo e(link_to_route('admin.categories.index', "Category")); ?>*/ ?>
             <?php /*</li>*/ ?>
             <?php /*<li class="<?php echo e(Active::pattern('admin/cars/*')); ?>">*/ ?>
             <?php /*<?php echo e(link_to_route('admin.cars.index', 'Car')); ?>*/ ?>
             <?php /*</li>*/ ?>
-            <?php /*<li class="<?php echo e(Active::pattern('admin/contacts/*')); ?>">*/ ?>
-            <?php /*<?php echo e(link_to_route('admin.contacts.index', 'Business')); ?>*/ ?>
-            <?php /*</li>*/ ?>
+            <li class="<?php echo e(Active::pattern('admin/contacts/*')); ?>">
+            <?php echo e(link_to_route('admin.contacts.index', 'Business')); ?>
+
+            </li>
             <li class="">
             <a href="<?php echo e(route('admin.contacts.index')); ?>">Contact Management</a>
             </li>
@@ -109,9 +114,9 @@
             <?php /*<li class="<?php echo e(Active::pattern('admin/galleries/*')); ?>">*/ ?>
                 <?php /*<?php echo e(link_to_route('admin.galleries.index', 'Image Gallery')); ?>*/ ?>
             <?php /*</li>*/ ?>
-            <?php /*<li class="<?php echo e(Active::pattern('admin/authors/*')); ?>">*/ ?>
-                <?php /*<?php echo e(link_to_route('admin.authors.index', 'Video Gallery')); ?>*/ ?>
-            <?php /*</li>*/ ?>
+<?php /*            <li class="<?php echo e(Active::pattern('admin/authors/*')); ?>">*/ ?>
+<?php /*                <?php echo e(link_to_route('admin.authors.index', 'Authors For Vid Gallery')); ?>*/ ?>
+<?php /*            </li>*/ ?>
         <!--            <li class="<?php echo e(Active::pattern('admin/downloads/*')); ?>">
                 <?php echo e(link_to_route('admin.downloads.index', "Downloads")); ?>
 
@@ -134,74 +139,33 @@
             <?php /*<li class="<?php echo e(Active::pattern('admin/headers/*')); ?>">*/ ?>
             <?php /*<?php echo e(link_to_route('admin.headers.index.rate', 'Dollar Rate')); ?>*/ ?>
             <?php /*</li>*/ ?>
-            <?php /*<li class="<?php echo e(Active::pattern('admin/clients/*')); ?>">*/ ?>
-            <?php /*<?php echo e(link_to_route('admin.clients.index', 'Brands')); ?>*/ ?>
-            <?php /*</li>*/ ?>
-            <?php /*<li class="">*/ ?>
-            <?php /*<a href="<?php echo e(route('admin.galleries.index')); ?>">Country</a>*/ ?>
-            <?php /*</li>*/ ?>
-            <li class="<?php echo e(Active::pattern('admin/customers/*')); ?>">
-                <?php echo e(link_to_route('admin.customers.index', 'Staff Management')); ?>
+            <li class="<?php echo e(Active::pattern('admin/clients/*')); ?>">
+            <?php echo e(link_to_route('admin.clients.index', 'Partners/Clients Management')); ?>
+
+            </li>
+
+<?php /*            <li class="<?php echo e(Active::pattern('admin/customers/*')); ?>">*/ ?>
+<?php /*                <?php echo e(link_to_route('admin.customers.index', 'Video Management')); ?>*/ ?>
+<?php /*            </li>*/ ?>
+            <li class="<?php echo e(Active::pattern('admin/brandTypes/*')); ?>">
+                <?php echo e(link_to_route('admin.brandTypes.index', 'Image Gallery Category Management')); ?>
+
+            </li>
+            <li class="<?php echo e(Active::pattern('admin/brands/*')); ?>">
+                <?php echo e(link_to_route('admin.brands.index', 'Image Gallery Management')); ?>
+
+            </li>
+            <li class="<?php echo e(Active::pattern('admin.galleries/*')); ?>">
+                <?php echo e(link_to_route('admin.galleries.index', 'Video Gallery Management')); ?>
 
             </li>
             <li class="<?php echo e(Active::pattern('admin/email/setting/*')); ?>">
                 <?php echo e(link_to_route('admin.email.setting', 'Setting Management')); ?>
 
             </li>
-            <li class="" style="background-color: #3c8dbc;">
-                <a href="#" style="color: #fff !important;">Application Management</a>
-            </li>
-            <li class="treeview">
 
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Teacher Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="<?php echo e(route('admin.teachers.index')); ?>"><i class="fa fa-circle-o"></i>Teacher Management</a></li>
-                    <li><a href="<?php echo e(route('admin.courseToTeaches.index')); ?>"><i class="fa fa-circle-o"></i>Course To Teach Management</a></li>
-                    <li><a href="<?php echo e(route('admin.paymentPlans.index')); ?>"><i class="fa fa-circle-o"></i>Payment Plan Management</a></li>
-                    <li><a href="<?php echo e(route('admin.paymentAccounts.index')); ?>"><i class="fa fa-circle-o"></i>Payment Account Management</a></li>
 
-                </ul>
-            </li>
-            <li class="treeview">
 
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Course Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <?php /*<li><a href="<?php echo e(route('admin.employees.index')); ?>"><i class="fa fa-circle-o"></i>Student</a></li>*/ ?>
-                    <li><a href="<?php echo e(route('admin.studentClasses.index')); ?>"><i class="fa fa-circle-o"></i>Class Management</a></li>
-                    <li><a href="<?php echo e(route('admin.subjectTypes.index')); ?>"><i class="fa fa-circle-o"></i>Course Type Management</a></li>
-                    <li><a href="<?php echo e(route('admin.subjects.index')); ?>"><i class="fa fa-circle-o"></i>Course Management</a></li>
-                    <?php /*<li><a href="<?php echo e(route('admin.classSubjects.index')); ?>"><i class="fa fa-circle-o"></i>Class Subjects Management</a></li>*/ ?>
-                    <?php /*<li><a href="<?php echo e(route('admin.chapters.index')); ?>"><i class="fa fa-circle-o"></i>Chapter Management</a></li>*/ ?>
-                    <?php /*<li><a href="<?php echo e(route('admin.topics.index')); ?>"><i class="fa fa-circle-o"></i>Topic Management</a></li>*/ ?>
-
-                </ul>
-            </li>
-            <li class="treeview">
-
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Student Management</span>
-                    <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="<?php echo e(route('admin.students.index')); ?>"><i class="fa fa-circle-o"></i>Student Management</a></li>
-
-                </ul>
-            </li>
 
 
             <?php /*<li class="treeview">*/ ?>
@@ -225,12 +189,7 @@
 
             <?php /*</ul>*/ ?>
             <?php /*</li>*/ ?>
-            <?php /*<li class="<?php echo e(Active::pattern('admin/brandTypes/*')); ?>">*/ ?>
-            <?php /*<?php echo e(link_to_route('admin.brandTypes.index', 'Brand Type')); ?>*/ ?>
-            <?php /*</li>*/ ?>
-            <?php /*<li class="<?php echo e(Active::pattern('admin/brands/*')); ?>">*/ ?>
-            <?php /*<?php echo e(link_to_route('admin.brands.index', 'Brand')); ?>*/ ?>
-            <?php /*</li>*/ ?>
+
 
             <?php /*<li class="<?php echo e(Active::pattern('admin/services/*')); ?>">*/ ?>
             <?php /*<?php echo e(link_to_route('admin.services.index', 'Services')); ?>*/ ?>

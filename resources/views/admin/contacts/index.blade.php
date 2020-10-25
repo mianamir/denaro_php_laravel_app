@@ -18,9 +18,10 @@
                 <table class="table table-responsive" id="demo1">
                     <thead>
                    <tr>
-                       <th>Title</th>
+{{--                       <th>Title</th>--}}
                        <th>Email</th>
                        <th>Phone</th>
+                       <th>Address</th>
                        <th>Map</th>
                        <th>Actions</th>
                    </tr>
@@ -28,9 +29,10 @@
                     <tbody>
                     @foreach($contacts as $contact)
                         <tr>
-                            <td>{{$contact->title}}</td>
+{{--                            <td>{{$contact->title}}</td>--}}
                             <td>{{$contact->email}}</td>
                             <td>{{$contact->phone1}}</td>
+                            <td>{{$contact->address}}</td>
                             <td style="width: 200px; height: 20px;">{!! $contact->fax !!}</td>
                             <td>
                                 {{--{!! Form::open(['route' => ['admin.contacts.destroy', $contact->id], 'method' => 'delete']) !!}--}}

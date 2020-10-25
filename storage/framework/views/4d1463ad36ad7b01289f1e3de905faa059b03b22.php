@@ -3,7 +3,7 @@
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
         <h1>
-            Banner
+            Image Gallery
         </h1>
     </section>
     <div class="content">

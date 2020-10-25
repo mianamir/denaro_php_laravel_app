@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Banner
+            Image Gallery Category
         </h1>
     </section>
     <div class="content">

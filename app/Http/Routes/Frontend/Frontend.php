@@ -128,16 +128,20 @@ Route::get('/index', 'FrontendController@index')->name('frontend.index');
 Route::get('/about', 'FrontendController@about')->name('frontend.about');
 Route::get('/student/learning', 'FrontendController@student_learning')->name('frontend.student.learning');
 Route::get('/chairman/message', 'FrontendController@chairmanMessage')->name('frontend.chairman.message');
+Route::get('/director-message', 'FrontendController@director_message')->name('frontend.director.message');
 Route::get('/core/values', 'FrontendController@coreValues')->name('frontend.core.values');
 Route::get('/our/dedicated/staff', 'FrontendController@ourDedicatedStaff')->name('frontend.our.dedicated.staff');
-Route::get('/image/gallery/category', 'FrontendController@imageGalleryCategory')->name('frontend.image.gallery.category');
-Route::get('/image/gallery/{id}', 'FrontendController@imageGallery')->name('frontend.image.gallery');
-Route::get('/video/gallery', 'FrontendController@videoGallery')->name('frontend.video.gallery');
+//Route::get('/image/gallery/category', 'FrontendController@imageGalleryCategory')->name('frontend.image.gallery.category');
+//Route::get('/image/gallery/{id}', 'FrontendController@imageGallery')->name('frontend.image.gallery');
+Route::get('/video/gallery/search', 'FrontendController@video_gallery_search')->name('frontend.site.video.gallery.search');
+Route::get('/image-gallery-category1', 'FrontendController@image_gallery_category1')->name('frontend.image.gallery.category1');
+Route::get('/image-gallery/{image_gallery_category_id}/search', 'FrontendController@image_gallery1')->name('frontend.image.gallery1');
 Route::get('/import-from-japan', 'FrontendController@importFromJapan')->name('frontend.import.from.japan');
 Route::get('/faq', 'FrontendController@faq')->name('frontend.faq');
 Route::get('/duties', 'FrontendController@duties')->name('frontend.duties');
 Route::get('/brand', 'FrontendController@brand')->name('frontend.brand');
 Route::get('/client', 'FrontendController@client')->name('frontend.client');
+Route::get('/exclusive-partners', 'FrontendController@exclusive_partners')->name('frontend.exclusive.partners');
 Route::get('/service', 'FrontendController@service')->name('frontend.service');
 Route::get('/what-we-do', 'FrontendController@whatWeDo')->name('frontend.what-we-do');
 Route::get('/downloads', 'FrontendController@download')->name('frontend.download');
@@ -167,7 +171,7 @@ Route::get('/booktype/{id}', ['as' => 'booktype', 'uses' => 'FrontendController@
 //Route::get('/category-type/{id}', ['as' => 'category.type', 'uses' => 'FrontendController@categoryType']);
 //Route::get('/category-accessories/filters', ['as' => 'category.type', 'uses' => 'FrontendController@categoryAccessoriesFilter']);
 //Route::get('/category-accessories/dryers', ['as' => 'category.type', 'uses' => 'FrontendController@categoryAccessoriesDryers']);
-Route::get('/gallery/{category}', ['as' => 'gallery.category', 'uses' => 'FrontendController@galleryCategory']);
+//Route::get('/gallery/{category}', ['as' => 'gallery.category', 'uses' => 'FrontendController@galleryCategory']);
 
 
 

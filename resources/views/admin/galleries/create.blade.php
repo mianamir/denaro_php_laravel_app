@@ -35,42 +35,42 @@
                                 {{ Session::get('name') }}
                             </div>
                         @endif
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <?php
-                                $categories = \App\Models\Admin\HomeGallery::orderBy('order_image','ASC')->get();
-                                ?>
-                                <label>Category</label><br>
-                                <select class="form-control" name="cat_id">
-                                    <option value="-1">Category</option>
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->title}}</option>
-                                    @endforeach
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <?php--}}
+{{--                                $categories = \App\Models\Admin\HomeGallery::orderBy('order_image','ASC')->get();--}}
+{{--                                ?>--}}
+{{--                                <label>Category</label><br>--}}
+{{--                                <select class="form-control" name="cat_id">--}}
+{{--                                    <option value="-1">Category</option>--}}
+{{--                                    @foreach($categories as $category)--}}
+{{--                                        <option value="{{$category->id}}">{{$category->title}}</option>--}}
+{{--                                    @endforeach--}}
 
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Youtube Video URL</label>
                                 <input id="" name="name" type="text" class="form-control">
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Image</label>
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label>Image</label>--}}
 
-                                <input id="" name="image" type="file" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Image Order</label>
+{{--                                <input id="" name="image" type="file" class="form-control">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label>Image Order</label>--}}
 
-                                <input id="" name="order_image" type="text" class="form-control">
-                            </div>
-                        </div>
+{{--                                <input id="" name="order_image" type="text" class="form-control">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="col-md-12">
                             <div class="form-group">

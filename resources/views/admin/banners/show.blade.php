@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+@extends('admin2.layouts.master')
 
 @section('content')
     <section class="content-header">

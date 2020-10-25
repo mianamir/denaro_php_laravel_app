@@ -30,7 +30,7 @@ class CategoryController extends AppBaseController
      */
     public function index()
     {
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::get();
 
 
         return view('admin.categories.index')

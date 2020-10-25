@@ -101,9 +101,9 @@
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <strong>Designed & Developed By: <a href="http://goey.co/" title="Goey | Web/Mobile Design Development and Digital Marketing Agency USA" style="color: #000; font-weight: 600;text-decoration:none" target="_blank">GOEY.CO</a></strong>
+            <strong>Designed & Developed By: <a href="https://www.infotech4it.com/" title="Infotech4it | Web Design Development and Digital Marketing Agency" style="color: #000; font-weight: 600;text-decoration:none" target="_blank">Infotech4it</a></strong>
                     </div>
-        <strong>Copyright &copy; 2019 <a href="{{url('dashboard')}}">{{app_name()}}</a>.</strong> All rights
+        <strong>Copyright &copy; 2020 <a href="{{url('dashboard')}}">{{app_name()}}</a>.</strong> All rights
         reserved.
     </footer>
 

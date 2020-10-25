@@ -20,10 +20,10 @@
                     <thead>
 
                     <tr>
-                        <th>Category</th>
+{{--                        <th>Category</th>--}}
                         <th>Name</th>
-                        <th>Image</th>
-                        <th>Image Order</th>
+{{--                        <th>Image</th>--}}
+{{--                        <th>Image Order</th>--}}
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -31,21 +31,25 @@
                     <tbody>
                     @foreach($galleries as $gallery)
                         <?php
-                        $category = \App\Models\Admin\HomeGallery::where('id',$gallery->cat_id)->first();
+//                        $category = \App\Models\Admin\HomeGallery::where('id',$gallery->cat_id)->first();
 
 
                         ?>
                         <tr>
+{{--                            <td>--}}
+{{--                                @if($category != null)--}}
+{{--                                    {!! $category->title !!}--}}
+{{--                                @else--}}
+{{--                                    Not Available--}}
+{{--                                @endif--}}
+{{--                            </td>--}}
+{{--                            <td>{!! $gallery->name !!}</td>--}}
                             <td>
-                                @if($category != null)
-                                    {!! $category->title !!}
-                                @else
-                                    Not Available
-                                @endif
+                                <iframe width="250" height="250" src="https://www.youtube.com/embed/{{$gallery->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                             </td>
-                            <td>{!! $gallery->name !!}</td>
-                            <td><img src="{{asset($gallery->image)}}" width="200" height="70"></td>
-                            <td>{!! $gallery->order_image !!}</td>
+{{--                            <td><img src="{{asset($gallery->image)}}" width="200" height="70"></td>--}}
+{{--                            <td>{!! $gallery->order_image !!}</td>--}}
                             <td>
                                 {!! Form::open(['route' => ['admin.galleries.destroy', $gallery->id], 'method' => 'delete']) !!}
                                 <div class='btn-group'>

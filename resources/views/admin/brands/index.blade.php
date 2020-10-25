@@ -1,8 +1,8 @@
-@extends('backend.layouts.master')
+@extends('admin2.layouts.master')
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Brands</h1>
+        <h1 class="pull-left">Image Gallery</h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('admin.brands.create') !!}">Add New</a>
         </h1>
@@ -17,15 +17,15 @@
             <div class="box-body">
                 <table class="table table-responsive">
                     <thead>
-                    <th>Brand mage</th>
-                    <th>Brand Type</th>
+                    <th>Image Gallery Category</th>
+                    <th>Image Gallery</th>
+
                     <th colspan="3">Actions</th>
                     </thead>
                     <tbody>
                     @foreach($brands as $brand)
                         <tr>
 
-                            <td><image src="{{asset($brand->image)}}" width="100" height="100"/></td>
                             <?php
                             $types = \App\Models\Admin\BrandType::all();
                             ?>
@@ -34,6 +34,7 @@
                             <td>{{$type->name}}</td>
                             @endif
                             @endforeach
+                            <td><img src="{{asset($brand->image)}}" width="100" height="100"/></td>
                             <td>
                                 {!! Form::open(['route' => ['admin.brands.destroy', $brand->id], 'method' => 'delete']) !!}
                                 <div class='btn-group'>

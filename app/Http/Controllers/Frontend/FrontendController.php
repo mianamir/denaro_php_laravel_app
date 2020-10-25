@@ -8,10 +8,12 @@ use App\Models\Access\User\User;
 use App\Models\Admin\Author;
 use App\Models\Admin\Book;
 use App\Models\Admin\BookType;
+use App\Models\Admin\Brand;
 use App\Models\Admin\Car;
 use App\Models\Admin\CarDoor;
 use App\Models\Admin\Category;
 use App\Models\Admin\Chapter;
+use App\Models\Admin\Contact;
 use App\Models\Admin\Employee;
 use App\Models\Admin\Gallery;
 use App\Models\Admin\HomeGallery;
@@ -2233,33 +2235,30 @@ class FrontendController extends Controller
         return view('frontend.site.our-dedicated-staff', compact('content'));
     }
 
-    public function imageGalleryCategory()
-    {
-        $content = Page::where('name', 'image_gallery')->first();
-        \Meta::set('title', $content->title);
-        \Meta::set('description', $content->meta_description);
-        \Meta::set('image', asset($content->image));
-        return view('frontend.site.image-gallery-category', compact('content'));
-    }
+//    public function imageGalleryCategory()
+//    {
+//        $content = Page::where('name', 'image_gallery')->first();
+//        \Meta::set('title', $content->title);
+//        \Meta::set('description', $content->meta_description);
+//        \Meta::set('image', asset($content->image));
+//        return view('frontend.site.image-gallery-category', compact('content'));
+//    }
 
-    public function imageGallery($id)
-    {
-        $content = Page::where('name', 'image_gallery')->first();
-        \Meta::set('title', $content->title);
-        \Meta::set('description', $content->meta_description);
-        \Meta::set('image', asset($content->image));
-        $galleries = Gallery::where('cat_id', $id)->orderBy('order_image','ASC')->get();
-        $category = HomeGallery::find($id);
-        return view('frontend.site.image-gallery', compact('content','galleries', 'category'));
-    }
+//    public function imageGallery($id)
+//    {
+//        $content = Page::where('name', 'image_gallery')->first();
+//        \Meta::set('title', $content->title);
+//        \Meta::set('description', $content->meta_description);
+//        \Meta::set('image', asset($content->image));
+//        $galleries = Gallery::where('cat_id', $id)->orderBy('order_image','ASC')->get();
+//        $category = HomeGallery::find($id);
+//        return view('frontend.site.image-gallery', compact('content','galleries', 'category'));
+//    }
 
-    public function videoGallery()
+    public function video_gallery_search()
     {
         $content = Page::where('name', 'video_gallery')->first();
-        \Meta::set('title', $content->title);
-        \Meta::set('description', $content->meta_description);
-        \Meta::set('image', asset($content->image));
-        return view('frontend.site.video-gallery', compact('content'));
+        return view('frontend.site.video-gallery-search', compact('content'));
     }
 
     public function about()
@@ -2280,6 +2279,27 @@ class FrontendController extends Controller
 
         return view('frontend.site.client', compact('content'));
     }
+
+    public function exclusive_partners()
+    {
+        $content = Page::where('name', 'exclusive_partners')->first();
+
+        return view('frontend.site.exclusive-partners', compact('content'));
+    }
+
+    public function image_gallery_category1()
+    {
+        $content = Page::where('name', 'image_gallery_category1')->first();
+        return view('frontend.site.image-gallery-category1', compact('content'));
+    }
+
+    public function image_gallery1($image_gallery_category_id)
+    {
+        $content = Page::where('name', 'image_gall')->first();
+        $image_galleries = Brand::where('brand_type_id', $image_gallery_category_id)->get();
+        return view('frontend.site.image-gallery1', compact('content', 'image_galleries'));
+    }
+
 
     public function service()
     {
@@ -2304,12 +2324,10 @@ class FrontendController extends Controller
     public function contact()
     {
         $content = Page::where('name', 'contact_form')->first();
-//        dd($content);
-        \Meta::set('title', $content->title);
-        \Meta::set('description', $content->meta_description);
-        \Meta::set('image', asset($content->image));
 
-        return view('frontend.site.contact', compact('content'));
+        $contact = Contact::first();
+
+        return view('frontend.site.contact', compact('content', 'contact'));
     }
 
     public function terms_of_service()
@@ -2337,11 +2355,17 @@ class FrontendController extends Controller
     public function vision()
     {
         $content = Page::where('name', 'vision_mission')->first();
-        \Meta::set('title', $content->title);
-        \Meta::set('description', $content->meta_description);
-        \Meta::set('image', asset($content->image));
+
 
         return view('frontend.site.vision-mission', compact('content'));
+    }
+
+    public function director_message()
+    {
+        $content = Page::where('name', 'director_message')->first();
+
+
+        return view('frontend.site.director-message', compact('content'));
     }
 
     public function careers()
@@ -2366,24 +2390,24 @@ class FrontendController extends Controller
     public function emailSend(Request $request)
     {
 
-        $fname = $request->get("fname");
-        $lname = $request->get("fname");
+        $fullname = $request->get("fullname");
         $email = $request->get("email");
-        $text = $request->get("text");
+        $website = $request->get("website");
+        $website = $request->get("website");
         // Get Email from User Table
-        $user = User::find(2);
+        $user = User::find(1);
 
         \Mail::send('emails.contact_form',
             [
-                'fname' => $request->get("fname"),
-                'lname' => $request->get("lname"),
+                'fullname' => $request->get("fullname"),
                 'email' => $request->get("email"),
-                'text' => $request->get("text")
+                'website' => $request->get("website"),
+                'comment' => $request->get("comment")
             ], function ($m) use ($user) {
 
-            $m->to($user->email, 'PPS | Paksitan Public School &amp; Colllege');
-            $m->subject('New Inquiry From PPS | Paksitan Public School &amp; Colllege');
-            $m->from($user->email,'PPS | Paksitan Public School &amp; Colllege');
+            $m->to($user->email, 'DENARO International Traders');
+            $m->subject('New Inquiry From DENARO');
+            $m->from($user->email,'DENARO International Traders');
 
         });
 

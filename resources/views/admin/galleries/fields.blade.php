@@ -2,15 +2,15 @@
 
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Youtube Video URL:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Image Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('image', 'Image:') !!}
-    {!! Form::file('image') !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('image', 'Image:') !!}--}}
+{{--    {!! Form::file('image') !!}--}}
+{{--</div>--}}
 <div class="clearfix"></div>
 
 
